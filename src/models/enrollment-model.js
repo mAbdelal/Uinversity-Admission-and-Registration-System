@@ -91,11 +91,9 @@ const EnrollmentSchema = new Schema(
 
 
 // Indexes
-// EnrollmentSchema.index({ studentId: 1 }); // Index for faster queries by studentId
-// EnrollmentSchema.index({ classId: 1 }); // Index for faster queries by classId
-// EnrollmentSchema.index({ "grades.total": -1 }); // Index for sorting by total grade (descending)
-// EnrollmentSchema.index({ enrollmentDate: -1 }); // Index for sorting by enrollment date (descending)
+EnrollmentSchema.index({ studentId: 1 }); 
+EnrollmentSchema.index({ classId: 1 }); 
 
-// Export the model
+
 const enrollmentModel = mongoose.model("Enrollment", EnrollmentSchema);
 module.exports = enrollmentModel;

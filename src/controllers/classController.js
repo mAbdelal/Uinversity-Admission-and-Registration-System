@@ -119,7 +119,7 @@ const getClasses = async (req, res) => {
 };
 
 
-const updateClass = async (req, res, next) => {
+const updateClass = async (req, res) => {
     try {
         const { id } = req.params;
 
@@ -244,7 +244,7 @@ const changeClassesStatus = async (req, res) => {
     }
 };
 
-const addAppointment = async (req, res, next) => {
+const addAppointment = async (req, res) => {
     try {
         const { id } = req.params;
         const { day, startTime, endTime } = req.body;
@@ -278,7 +278,7 @@ const addAppointment = async (req, res, next) => {
     }
 };
 
-const deleteAppointment = async (req, res, next) => {
+const deleteAppointment = async (req, res) => {
     try {
         const { id, appointmentId } = req.params; 
 
@@ -310,7 +310,7 @@ const deleteAppointment = async (req, res, next) => {
 };
 
 
-const lockClass = async (req, res, next) => {
+const lockClass = async (req, res) => {
     try {
         const { id } = req.params; 
 
@@ -332,7 +332,7 @@ const lockClass = async (req, res, next) => {
 };
 
 
-const unlockClass = async (req, res, next) => {
+const unlockClass = async (req, res) => {
     try {
         const { id } = req.params; 
 

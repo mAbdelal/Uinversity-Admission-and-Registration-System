@@ -1,11 +1,6 @@
 
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const Semester =require('./semester-model');
-const SystemError = require("../utils/customErrors/systemError");
-const { SYSTEM_ERROR_LOGGING }=require("../utils/constants/systemLoggingConstants");
-const ApiError = require("../utils/customErrors/apiError");
-const { ERROR_HTTP_CODES }=require("../utils/constants/httpConstants")
 const ClassSchema = new Schema(
     {
         courseDetails: {
@@ -95,12 +90,10 @@ const ClassSchema = new Schema(
 );
 
 
-// // Indexes
-// ClassSchema.index({ "courseDetails.courseId": 1 }); // Index for faster queries by course ID
-// ClassSchema.index({ semesterId: 1 }); // Index for faster queries by semester ID
-// ClassSchema.index({ "instructorDetails.instructorId": 1 }); // Index for faster queries by instructor ID
-// ClassSchema.index({ roomId: 1 }); // Index for faster queries by room ID
-// ClassSchema.index({ createdAt: -1 }); // Index for sorting by creation date (descending)
+ClassSchema.index({ "courseDetails.courseId": 1 }); // Index for faster queries by course ID
+ClassSchema.index({ semesterId: 1 }); // Index for faster queries by semester ID
+
+
 
 const classModel = mongoose.model("Class", ClassSchema);
 module.exports = classModel

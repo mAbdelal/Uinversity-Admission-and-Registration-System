@@ -39,14 +39,7 @@ const AuditSchema = new Schema(
     },
 );
 
-// // Indexes
-// AuditSchema.index({ userId: 1 }); // Index for faster queries by userId
-// AuditSchema.index({ userType: 1 }); // Index for faster queries by userType
-// AuditSchema.index({ action: 1 }); // Index for faster queries by action
-// AuditSchema.index({ status: 1 }); // Index for faster queries by status
-// AuditSchema.index({ date: -1 }); // Index for sorting by date (descending)
-
-
+AuditSchema.index({ userId: 1 }); 
 
 
 module.exports = mongoose.model("Audit", AuditSchema);

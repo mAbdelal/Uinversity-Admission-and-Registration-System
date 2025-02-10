@@ -204,9 +204,6 @@ const EmployeeSchema = new Schema(
 EmployeeSchema.methods.getCurrentPositionTitle = function () {
     const now = new Date();
 
-    // Find the position where:
-    // - startDate <= now
-    // - endDate is either null or >= now
     const currentPosition = this.positionsDetails.find(
         (position) =>
             position.startDate <= now &&
@@ -219,12 +216,7 @@ EmployeeSchema.methods.getCurrentPositionTitle = function () {
 
 
 // Indexes
-// EmployeeSchema.index({ managerId: 1 }); // Index for faster queries by manager
-// EmployeeSchema.index({ "positionsDetails.departmentId": 1 }); // Index for faster queries by department
-// EmployeeSchema.index({ firstName: "text", lastName: "text" }); // Text index for searching by name
-// EmployeeSchema.index({ hireDate: -1 }); // Index for sorting by hire date (descending)
-
-
+EmployeeSchema.index({ firstName: "text", lastName: "text" }); 
 
 const employeeModel =mongoose.model("Employee", EmployeeSchema);
 module.exports = employeeModel;

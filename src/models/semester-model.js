@@ -135,14 +135,12 @@ semesterSchema.pre("save", function (next) {
     next(); 
 });
 
-// Indexes
-semesterSchema.index({ "schedule.startDate": 1 });
-semesterSchema.index({ "schedule.endDate": 1 });
-semesterSchema.index({ "schedule.enrollmentStartDate": 1 }); 
-semesterSchema.index({ "schedule.finalExamsStartDate": 1 });
+
+semesterSchema.index({ "schedule.startDate": 1, "schedule.endDate": 1 });
+
+
 
 
 const semesterModel = mongoose.model('Semester', semesterSchema);
-
 module.exports = semesterModel;
 

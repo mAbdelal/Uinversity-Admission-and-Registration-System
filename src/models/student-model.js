@@ -208,13 +208,10 @@ const StudentSchema = new Schema(
     }
 );
 
-
-
-// Indexes
-// StudentSchema.index({ status: 1 }); 
-// StudentSchema.index({ "department.departmentId": 1 });
-// StudentSchema.index({ "faculty.facultyId": 1}); 
-// StudentSchema.index({ firstName: "text", lastName: "text" }); 
+StudentSchema.index({ status: 1 }); 
+StudentSchema.index({ "department.departmentId": 1 });
+StudentSchema.index({ "faculty.facultyId": 1}); 
+StudentSchema.index({ firstName: "text", lastName: "text" }); 
 
 
 const studentModel = mongoose.model("Student", StudentSchema);

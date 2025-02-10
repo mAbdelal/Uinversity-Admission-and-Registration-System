@@ -54,6 +54,8 @@ const permissionSchema = new Schema(
     }
 );
 
+requestSchema.index({ owner: 1 }); 
+
 const permissionModel = mongoose.model("Permission", permissionSchema);
 module.exports = permissionModel;
 

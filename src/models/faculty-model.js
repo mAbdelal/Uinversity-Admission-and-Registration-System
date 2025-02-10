@@ -80,9 +80,7 @@ const facultySchema = new Schema(
     }
 );
 
-// Indexes
-// facultySchema.index({ "departments.departmentId": 1 }); // Index for faster queries by department ID
-// facultySchema.index({ facultyName: "text" }); // Text index for searching by faculty name
 
+facultySchema.index({ "departments.departmentId": 1 }); 
 
 module.exports = mongoose.model("Faculty", facultySchema);

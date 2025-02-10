@@ -53,10 +53,7 @@ const requestSchema = new Schema(
 requestSchema.index({ requesterID: 1 }); 
 requestSchema.index({ responderID: 1 }); 
 requestSchema.index({ requestDate: -1 }); 
-requestSchema.index({ responseDate: -1 }); 
-requestSchema.index({ requesterRole: 1 }); 
-requestSchema.index({ responderPosition: 1 }); 
 
-// Create the Request Model
+
 const Request = mongoose.model('Request', requestSchema);
 module.exports=Request;
